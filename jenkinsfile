@@ -1,2 +1,16 @@
-javac HellowWorld.java
-java HellowWorld.java
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                sh 'javac HellowWorld.java'
+            }
+        }
+        stage('Run') {
+            steps {
+                sh 'java HellowWorld'
+            }
+        }
+    }
+}
